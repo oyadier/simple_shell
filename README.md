@@ -9,4 +9,7 @@ The following are some of the resources needed for he the completion of this pro
 	1. PID and PPID
 	2. Command line arguments
 	3. Executing a program
+	4. Creating processes
+	5. Wait
+	6. fork + wait + execve
 
