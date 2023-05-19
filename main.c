@@ -1,20 +1,34 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * main - function that prints the last digit of a num
- *	the number to find the last digit
- *@ac: the number of elements in av
- *@av: the string pointer argument passed
- * Return: Always return 0.
+ * main- The entry point
+ * Return: Always 0.
  */
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
+int main(void)
 {
-	int r, num = 1024;
+	char **argv;
+	char *lineptr, *lineptr_copy;
+	int is_input_tty = isatty(STDIN_FILENO);
 
-	if (num < 0)
-		num = -num;
+	/* Creating an infinite loop for the shell's prompt */
+	while (1 == 1)
+	{
+		if (is_input_tty)
+		{
+			start_prompt();
+			fflush(stdout);
+		}
+		lineptr = line_command();
+		lineptr_copy = copy_func(lineptr);
 
-	r = num % 10;
-	printf("%d\n", r);
+		argv = tok_parsing(lineptr, lineptr_copy);
+
+		if (strcmp(argv[0], "exit") == 0)
+			handle_exit();
+		else if (strcmp(argv[0], "env") == 0)
+			handle_env();
+		else
+			execmd(argv);
+		free_mem(argv, lineptr, lineptr_copy);
+	}
 	return (0);
 }
