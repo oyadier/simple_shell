@@ -1,24 +1,27 @@
 #include "main.h"
 
 /**
- * copy_func - this function will copy the content
- * @lineptr: the pointer to copy from
+ * _cp_funct - this function will copy a source string
+ *		to a new char pointer
+ *@_line_ptr: the pointer to copy from
  *
- * Return: Return pointer to the copied content
+ * Return: pointer to the copied content
  */
-char *copy_func(char *lineptr)
+char *_cp_funct(char *_line_ptr)
 {
-	char *lineptr_copy;
+	char *_cp_ptr;
 
-	/* allocate enough memory for the lineptr_copy */
-	lineptr_copy = malloc(sizeof(char *) * strlen(lineptr) + 1);
-	if (lineptr_copy == NULL)
+	/*allocate memmory for the _line_ptr*/
+
+	_cp_ptr = malloc(sizeof(char *) * _strlen(_line_ptr) + 1);
+
+	if (_cp_ptr == NULL)
 	{
 		perror("tsh: memory allocation error");
 		exit(0);
 	}
-	/* copy the content of lineptr to lineptr_copy */
-	strcpy(lineptr_copy, lineptr);
 
-	return (lineptr_copy);
+	_strcopy(_cp_ptr, _line_ptr);
+
+	return (_cp_ptr);
 }
