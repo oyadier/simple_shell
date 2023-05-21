@@ -10,8 +10,6 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-
-
 /*Prototypes of required functions*/
 void start_prompt(void);
 int _putchar(char c);
@@ -25,6 +23,8 @@ char *path_help(char *path, char *cmd);
 void handle_exit(void);
 void handle_env(void);
 int _strlen(char *_line_ptr);
+char *_strdup(char *src);
+char *_strcat(char *dest, char *src);
 int _strcmp(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 
