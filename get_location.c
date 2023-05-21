@@ -2,11 +2,11 @@
 
 /**
  * get_location - function that gets the path of the command typed.
- * @command: the command to get its path
+ * @cmd: the command to get its path
  *
  * Return: Return the path if exit or NULL upon failure
  */
-char *get_location(char *command)
+char *get_location(char *cmd)
 {
 	char *path;
 	struct stat buff;
@@ -16,15 +16,15 @@ char *get_location(char *command)
 
 	if (path)
 	{
-		location = path_help(path, command);
+		location = path_help(path, cmd);
 
 		/* testing to know if the command itself is a path */
-		if (stat(command, &buff) == 0)
+		if (stat(cmd, &buff) == 0)
 		{
-			return (command);
+			return (cmd);
 		}
 		/* check if the command is not a valid command */
-		if (location != NULL && strcmp(command, location) != 0)
+		if (location != NULL && _strcmp(cmd, location) != 0)
 		{
 			return (location);
 		}

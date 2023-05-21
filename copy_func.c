@@ -21,7 +21,7 @@ char *_cp_funct(char *_line_ptr)
 		exit(0);
 	}
 
-	_strcopy(_cp_ptr, _line_ptr);
+	_strcpy(_cp_ptr, _line_ptr);
 
 	return (_cp_ptr);
 }

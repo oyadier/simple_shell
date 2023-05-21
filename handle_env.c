@@ -8,8 +8,8 @@
  */
 void handle_env(void)
 {
-	extern char **_environ;
-	char **_envp = _environ;
+	extern char **environ;
+	char **_envp = environ;
 
 	while (*_envp)
 	{

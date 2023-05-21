@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * execmd - Function that handles the execution of commands
+ * _execmd - Function that handles the execution of commands
  * @argv: The array of string of the command
  * Return: Nothing.
  */
-void execmd(char **argv)
+void _execmd(char **argv)
 {
-	char *command = NULL, *actual_command = NULL;
+	char *command = NULL, *real_command = NULL;
 	pid_t child_proc;
 	int status;
 
@@ -16,11 +16,10 @@ void execmd(char **argv)
 		/* get the command */
 		command = argv[0];
 
-		/**
-		 * generating the path to this command */
-		actual_command = get_location(command);
+		/* generating the path to this command */
+		real_command = get_location(command);
 
-		if (actual_command != NULL)
+		if (real_command != NULL)
 		{
 			/* creating a child process to handle the execution of command separately */
 			child_proc = fork();
@@ -30,10 +29,10 @@ void execmd(char **argv)
 				exit(EXIT_FAILURE);
 			}
 			if (child_proc == 0)
-			{	
+			{
 				/*printf("%s\n", actual_command);*/
 				/* execute the command with execve */
-				if (execve(actual_command, argv, NULL) == -1)
+				if (execve(real_command, argv, NULL) == -1)
 				{
 					perror("Error:");
 				}

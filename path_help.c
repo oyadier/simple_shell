@@ -3,11 +3,11 @@
 /**
  * path_help - function that help in finding the path of command
  * @path: the path of the command
- * @command: the command being typed
+ * @cmd: the command being typed
  *
  * Return: return the file path
  */
-char *path_help(char *path, char *command)
+char *path_help(char *path, char *cmd)
 {
 	char *path_copy, *path_token, *file_path;
 	int command_len, dir_len;
@@ -16,7 +16,7 @@ char *path_help(char *path, char *command)
 	/* Duplicating the path string */
 	path_copy = strdup(path);
 	/* getting the length of command */
-	command_len = strlen(command);
+	command_len = _strlen(cmd);
 
 	/* breaking down the path variable to get all the dir */
 	path_token = strtok(path_copy, ":");
@@ -28,7 +28,7 @@ char *path_help(char *path, char *command)
 		file_path = malloc(command_len + dir_len + 2);
 		strcpy(file_path, path_token);
 		strcat(file_path, "/");
-		strcat(file_path, command);
+		strcat(file_path, cmd);
 
 		/* check if the path exist, free the memory and return the path */
 		if (stat(file_path, &buff) == 0)

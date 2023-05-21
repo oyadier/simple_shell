@@ -18,14 +18,14 @@ int main(void)
 			fflush(stdout);
 		}
 
-		lineptr = line_command();
+		lineptr = line_cmd();
 		if (lineptr == NULL)
 			break;
 
 		if (strcmp(lineptr, "Enter") == 0)
 			continue;
 
-		lineptr_copy = copy_func(lineptr);
+		lineptr_copy = _cp_funct(lineptr);
 
 		argv = tok_parsing(lineptr, lineptr_copy);
 
@@ -34,7 +34,7 @@ int main(void)
 		else if (strcmp(argv[0], "env") == 0)
 			handle_env();
 		else
-			execmd(argv);
+			_execmd(argv);
 		free_mem(argv, lineptr, lineptr_copy);
 	}
 	return (0);

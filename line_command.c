@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * line_command - function that get command from the user
+ * line_cmd - function that get command from the user
  *
  * Return: on success the function the command
  */
-char *line_command(void)
+char *line_cmd(void)
 {
-	char *lineptr = NULL, *enter_key = "Enter";
+	char *_line_ptr = NULL, *enter_key = "Enter";
 	size_t n = 0;
 	ssize_t nchars_read;
 	int i = 0;
 
-	nchars_read = getline(&lineptr, &n, stdin);
+	nchars_read = getline(&_line_ptr, &n, stdin);
 	/* check if getline function failed or CTRL +D was entered */
 	if (nchars_read == -1)
 	{
@@ -22,17 +22,17 @@ char *line_command(void)
 	if (nchars_read == 1)
 	{
 		/*perror("Exiting...");*/
-		free(lineptr);
+		free(_line_ptr);
 		return (enter_key);
 	}
 
 	/* Handling EOF */
-	while (lineptr[i])
+	while (_line_ptr[i])
 	{
-		if (lineptr[i] == '\n')
-			lineptr[i] = '\0';
+		if (_line_ptr[i] == '\n')
+			_line_ptr[i] = '\0';
 		i++;
 	}
 
-	return (lineptr);
+	return (_line_ptr);
 }
