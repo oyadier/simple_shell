@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _cp_funct - copy string from src to dest
+ * _strcpy - copy string from src to dest
  * @dest: the new copied string
  * @src: the string to be copied
  *

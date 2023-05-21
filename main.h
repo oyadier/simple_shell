@@ -21,6 +21,7 @@ char *_cp_funct(char *_line_ptr);
 char *get_location(char *cmd);
 char *path_help(char *path, char *cmd);
 void handle_exit(void);
+extern char **environ;
 void handle_env(void);
 int _strlen(char *_line_ptr);
 char *_strdup(char *src);
