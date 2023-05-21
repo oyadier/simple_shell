@@ -7,15 +7,13 @@
  *
  * Return: a pointer to the characters in the string
  */
-
-
-char *_str_cp(char *dest, char *src);
+char *_strcpy(char *dest, char *src)
 {
 	char *ptr_start = dest;
 
 	while (*src != '\0')
 	{
-		*dest++ = src++;
+		*dest++ = *src++;
 	}
 
 	*dest = '\0';
