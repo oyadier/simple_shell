@@ -6,9 +6,9 @@
  *
  * Return: Nothing
  */
+
 void handle_env(void)
 {
-	extern char **environ;
 	char **_envp = environ;
 
 	while (*_envp)
