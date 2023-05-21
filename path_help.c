@@ -14,7 +14,7 @@ char *path_help(char *path, char *cmd)
 	struct stat buff;
 
 	/* Duplicating the path string */
-	path_copy = strdup(path);
+	path_copy = _strdup(path);
 	/* getting the length of command */
 	command_len = _strlen(cmd);
 
