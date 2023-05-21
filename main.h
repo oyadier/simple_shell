@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <string.h>
 #include <sys/wait.h>
-#include <stat.h>
+#include <sys/stat.h>
 /*Prototypes of required functions*/
 void prompt(void);
 int _putchar(char c);
@@ -21,5 +21,7 @@ char *path_help(char *path, char *cmd);
 void hdl_exit(void);
 void hdl_env(void);
 int _strlen(char *_line_ptr);
-char *_str_cp(char *dest, char *src);;
+char *_strdup(char *src);
+char *_strcat(char *src);;
+
 #endif
