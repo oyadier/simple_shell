@@ -12,4 +12,3 @@ The following are some of the resources needed for he the completion of this pro
 	4. Creating processes
 	5. Wait
 	6. fork + wait + execve
-

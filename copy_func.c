@@ -1,4 +1,4 @@
-#include "main.h"i
+#include "main.h"
 
 /**
  * _cp_funct - this function will copy a source string
@@ -7,8 +7,7 @@
  *
  * Return: pointer to the copied content
  */
-
-char *_cp_func(char *_line_ptr)
+char *_cp_funct(char *_line_ptr)
 {
 	char *_cp_ptr;
 
@@ -22,7 +21,7 @@ char *_cp_func(char *_line_ptr)
 		exit(0);
 	}
 
-	_strcopy(_cp_ptr, _line_ptr);
-	
+	_strcpy(_cp_ptr, _line_ptr);
+
 	return (_cp_ptr);
 }
