@@ -1,16 +1,19 @@
 #include "main.h"
 /**
- * _strcat - concatenate a string nth length
+ * _strcat - concatenate a string
  * @dest: the resulted string pointer
- * @src: the to be concatenated string
- * Return: string pointer
+ * @src: the string to be concatenated
+ *
+ * Return: String pointer
  */
-
 char *_strcat(char *dest, char *src)
 {
-	/*change the method implimentation*/
 	int _d_length = 0;
 	int _s_length = 0;
+
+	/*
+	 * computing the length of the dest string
+	 */
 
 	_d_length = _strlen(dest);
 	while (src[_s_length] != '\0')
