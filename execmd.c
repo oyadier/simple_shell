@@ -14,7 +14,7 @@ void _execmd(char **argv)
 	if (argv)
 	{
 		/* get the command */
-		command = argv[0];
+		command = _strdup(argv[0]);
 
 		/* generating the path to this command */
 		real_command = get_location(command);
@@ -25,24 +25,28 @@ void _execmd(char **argv)
 			child_proc = fork();
 			if (child_proc == -1)
 			{
-				free(argv);
 				exit(EXIT_FAILURE);
 			}
 			if (child_proc == 0)
 			{
 				/*printf("%s\n", actual_command);*/
 				/* execute the command with execve */
-				if (execve(real_command, argv, NULL) == -1)
+				if ((status =  execve(real_command, argv, NULL)) == -1)
 				{
-					perror("Error:");
+					perror(real_command);
+					exit(EXIT_FAILURE);
 				}
 			}
 			else
+			{
 				wait(&status);
+				free(real_command);
+			}
 		}
 		else
 		{
-			printf("%s: is not a valid command\n", command);
+			/*printf("%s: is not a valid command\n", command);*/
 		}
+	/*free(real_command);*/
 	}
 }

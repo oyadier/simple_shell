@@ -13,7 +13,7 @@ char *_cp_funct(char *_line_ptr)
 
 	/*allocate memmory for the _line_ptr*/
 
-	_cp_ptr = malloc(sizeof(char *) * _strlen(_line_ptr) + 1);
+	_cp_ptr = malloc(sizeof(char) * (_strlen(_line_ptr) + 1));
 
 	if (_cp_ptr == NULL)
 	{

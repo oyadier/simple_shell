@@ -5,8 +5,9 @@
  *
  * Return: Nothing
  */
-void handle_exit(void)
+void handle_exit(char **argv, char *lineptr, char *lineptr_copy)
 {
 	/* send a SIGTERM to the current processs */
+	free_mem(argv, lineptr, lineptr_copy);
 	exit(0);
 }
