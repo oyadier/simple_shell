@@ -20,7 +20,7 @@ void free_mem(char **argv, char *_line_ptr, char *_cp_ptr);
 char *_cp_funct(char *_line_ptr);
 char *get_location(char *cmd);
 char *path_help(char *path, char *cmd);
-void handle_exit(void);
+void handle_exit(char **argv, char *lineptr, char *lineptr_copy);
 extern char **environ;
 void handle_env(void);
 int _strlen(char *_line_ptr);

@@ -15,6 +15,7 @@ void free_mem(char **argv, char *_line_ptr, char *_cp_ptr)
 	{
 		free(argv[i]);
 	}
+	free(argv[i]);
 	free(argv);
 	free(_cp_ptr);
 	free(_line_ptr);

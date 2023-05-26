@@ -16,7 +16,8 @@ char *line_cmd(void)
 	/* check if getline function failed or CTRL +D was entered */
 	if (nchars_read == -1)
 	{
-		perror("Exiting...\n");
+		/*perror("Exiting...\n");*/
+		
 		return (NULL);
 	}
 	if (nchars_read == 1)

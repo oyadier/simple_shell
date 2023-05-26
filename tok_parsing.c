@@ -10,10 +10,10 @@
 
 char **tok_parsing(char *_line_ptr, char *_cp_ptr)
 {
-	char *token;
+	char *token = NULL;
 	const char *delim = " \n";
 	char **argv;
-	int n_tokens = 0, i;
+	int i, n_tokens = 0;
 
 	token = strtok(_line_ptr, delim);
 	while (token != NULL)
@@ -22,7 +22,7 @@ char **tok_parsing(char *_line_ptr, char *_cp_ptr)
 		token = strtok(NULL, delim);
 	}
 	/* allocating space to hold the array of strings */
-	argv = malloc(sizeof(char *) * n_tokens + 1);
+	argv = malloc(sizeof(char *) * (n_tokens + 1));
 	if (argv == NULL)
 	{
 		perror("tsh: memory allocation error");
@@ -30,9 +30,9 @@ char **tok_parsing(char *_line_ptr, char *_cp_ptr)
 	}
 	/* store each token in the argv array */
 	token = strtok(_cp_ptr, delim);
-	for (i = 0; token != NULL; i++)
+	for (i = 0; i < n_tokens; i++)
 	{
-		argv[i] = malloc(sizeof(char) * _strlen(token) + 1);
+		argv[i] = malloc(sizeof(char) * (_strlen(token) + 1));
 		if (argv[i] == NULL)
 		{
 			perror("tsh: memory allocation error");

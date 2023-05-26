@@ -8,27 +8,31 @@
  */
 char *get_location(char *cmd)
 {
-	char *path;
+	char *path = NULL;
 	struct stat buff;
-	char *location;
+	char *location = NULL;
 
 	path = getenv("PATH");
 
 	if (path)
 	{
-		location = path_help(path, cmd);
 
 		/* testing to know if the command itself is a path */
 		if (stat(cmd, &buff) == 0)
 		{
 			return (cmd);
 		}
+		location = path_help(path, cmd);
 		/* check if the command is not a valid command */
 		if (location != NULL && _strcmp(cmd, location) != 0)
 		{
+			free(cmd);
+			cmd = NULL;
 			return (location);
 		}
 	}
+
+	free(location);
 
 	return (NULL);
 }

@@ -9,7 +9,7 @@
  */
 char *path_help(char *path, char *cmd)
 {
-	char *path_copy, *path_token, *file_path;
+	char *path_copy = NULL, *path_token = NULL, *file_path;
 	int command_len, dir_len;
 	struct stat buff;
 
@@ -29,6 +29,7 @@ char *path_help(char *path, char *cmd)
 		_strcpy(file_path, path_token);
 		_strcat(file_path, "/");
 		_strcat(file_path, cmd);
+		file_path[dir_len + 1] = '\0';
 
 		/* check if the path exist, free the memory and return the path */
 		if (stat(file_path, &buff) == 0)
@@ -43,6 +44,7 @@ char *path_help(char *path, char *cmd)
 			path_token = strtok(NULL, ":");
 		}
 	}
+	free(path_token);
 	free(path_copy);
 	return (NULL);
 }
