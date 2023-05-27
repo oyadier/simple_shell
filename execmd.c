@@ -29,9 +29,9 @@ void _execmd(char **argv)
 			}
 			if (child_proc == 0)
 			{
-				/*printf("%s\n", actual_command);*/
 				/* execute the command with execve */
-				if ((status =  execve(real_command, argv, NULL)) == -1)
+				status =  execve(real_command, argv, NULL);
+				if (status == -1)
 				{
 					perror(real_command);
 					exit(EXIT_FAILURE);
@@ -43,10 +43,5 @@ void _execmd(char **argv)
 				free(real_command);
 			}
 		}
-		else
-		{
-			/*printf("%s: is not a valid command\n", command);*/
-		}
-	/*free(real_command);*/
 	}
 }

@@ -2,6 +2,9 @@
 
 /**
  * handle_exit - function that handles the 'exit' built-in command
+ * @argv: parameter to be freed
+ * @lineptr: parameter to be freed
+ * @lineptr_copy: parameter to be freed
  *
  * Return: Nothing
  */
