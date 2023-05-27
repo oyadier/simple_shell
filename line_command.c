@@ -17,7 +17,7 @@ char *line_cmd(void)
 	if (nchars_read == -1)
 	{
 		/*perror("Exiting...\n");*/
-		
+		free(_line_ptr);
 		return (NULL);
 	}
 	if (nchars_read == 1)
