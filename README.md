@@ -1,5 +1,6 @@
-# Alx Simple Shell Project
-h1 This task demands partners to create their own custom shell.
+# Alx Simple Shell Project done by Destiny Matuse and Oyadier.
+
+This task demands partners to create their own custom shell.
 At the end of the programe learners will gain
 1. How does a shell work
 2. What is a pid and a ppid
@@ -11,3 +12,9 @@ At the end of the programe learners will gain
 8. How to execute another program with the execve system call
 9. How to suspend the execution of a process until one of its children terminates
 10 What is ``EOF`` / “end-of-file”?
+
+Copyright - Plagiarism
+You are need to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+You are not allowed to publish any content of this project.
+Any form of plagiarism is strictly forbidden and will result in removal from the program. 
