@@ -1,12 +1,10 @@
 #include "main.h"
-/**
- * __exiting - exits the shell
- * @a: the first number
- * @b: the second number
- * Return: Always 0
- */
+#include <stdlib.h> /* Include the necessary header */
 
-void __exiting()
+/**
+ * __exiting - Exit the shell with a success status
+ */
+void __exiting(void)
 {
 	exit(EXIT_SUCCESS);
 }
