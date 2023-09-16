@@ -5,7 +5,7 @@
  *
  * Return: NULL
  */
-char *valid_comand(char *cmd)
+char *valid_command(char *cmd)
 {
 	char *path;
 	char *valid_cmd;
