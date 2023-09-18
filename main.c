@@ -1,10 +1,10 @@
 #include "main.h"
+
 /**
- * main - The main funtion
+ * main - The main function
  *
  * Return: Always 0
  */
-
 int main(void)
 {
 	char *line_ptr;
@@ -13,14 +13,12 @@ int main(void)
 
 	while (1)
 	{
-
-
 		if (isatty(STDIN_FILENO))
 		{
 			prompt();
 			fflush(stdout);
 		}
-		signal(SIGINT,__exiting);
+		signal(SIGINT, __exiting);
 
 		line_ptr = _getline();
 
@@ -34,19 +32,19 @@ int main(void)
 		if (_strcmp(arg[0], "env") == 0)
 		{
 			_environ();
-		} else if (_strcmp(arg[0], "exit") == 0)
+		}
+		else if (_strcmp(arg[0], "exit") == 0)
 		{
 			free_memory(arg);
 			free(line_ptr);
 			__exiting();
-		} else
+		}
+		else
 		{
 			_execve(arg);
 		}
 		free(line_ptr);
 		free_memory(arg);
 	}
-	
-
 	return (0);
 }

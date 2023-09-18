@@ -1,9 +1,10 @@
 #include "main.h"
+
 /**
- * valid_comand - checks the valid command
- * @cmd: command to be inputed
+ * valid_command - Checks if a command is valid.
+ * @cmd: The command to be checked.
  *
- * Return: NULL
+ * Return: A valid command or NULL.
  */
 char *valid_command(char *cmd)
 {
@@ -13,12 +14,11 @@ char *valid_command(char *cmd)
 
 	path = getenv("PATH");
 
-	if (cmd  == NULL)
+	if (cmd == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
-		
-		
+
 	if (stat(cmd, &st) == 0)
 	{
 		valid_cmd = _strdup(cmd);
@@ -32,4 +32,3 @@ char *valid_command(char *cmd)
 
 	return (NULL);
 }
-
