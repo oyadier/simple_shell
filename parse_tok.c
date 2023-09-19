@@ -1,17 +1,16 @@
 #include "main.h"
+
 /**
- * parse_tok - parses the token
- * @line_ptr: line parseed
+ * parse_tok - Parses the token.
+ * @line_ptr: Line to be parsed.
  *
- * Return: arg
+ * Return: Pointer to an array of strings (tokens).
  */
 char **parse_tok(char *line_ptr)
 {
-	/*char *cpy_line;*/
 	int array_len = 0, i;
 	char **arg;
 	char *token, *cpy_line;
-	/*char **argv;*/
 	const char *delim = " \n";
 
 	cpy_line = _strdup(line_ptr);
@@ -20,19 +19,21 @@ char **parse_tok(char *line_ptr)
 	{
 		return (NULL);
 	}
-	/*counting the number of strings in the array*/
+
+	/* Counting the number of strings in the array */
 	while (token)
 	{
 		array_len++;
 		token = strtok(NULL, delim);
 	}
-	/*allocating memory for array of string (character pointer)*/
+
+	/* Allocating memory for the array of string (character pointer) */
 	arg = malloc(sizeof(char *) * (array_len + 2));
 
 	token = strtok(cpy_line, delim);
 	for (i = 0; token != NULL; i++)
 	{
-	/*allocating memory for each string in the array*/
+		/* Allocating memory for each string in the array */
 		arg[i] = malloc(sizeof(char) * _strlen(token) + 2);
 		if (arg[i] == NULL)
 		{
@@ -45,7 +46,8 @@ char **parse_tok(char *line_ptr)
 			token = strtok(NULL, delim);
 		}
 	}
-	arg[i] = NULL;
+
+	arg[i] = NULL;	
 	free(cpy_line);
 	return (arg);
 }

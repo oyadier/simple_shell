@@ -1,4 +1,6 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
  * custom_getline - Custom getline function for reading lines from a stream.
  * @lineptr: Pointer to the buffer to hold the line.
@@ -13,19 +15,19 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 	size_t chars_read = 0;
 	/*int _spaces;*/
 
-	/*checks if null return*/
+	/* Check if null return */
 	null_checker(lineptr, n);
 
 	if (*lineptr == NULL || *n == 0)
-        {
-                bufsize =(size_t) BUF_SIZE; /* Initial buffer size (can be adjusted) */
-                *lineptr = (char *)malloc(bufsize);
-                if (*lineptr == NULL)
-                {
-                        return (-1); /* Memory allocation error */
-                }
-                *n = bufsize; /* Ownership of memory passed to the caller */
-        }
+	{
+		bufsize = (size_t)BUF_SIZE; /* Initial buffer size (can be adjusted) */
+		*lineptr = (char *)malloc(bufsize);
+		if (*lineptr == NULL)
+		{
+			return (-1); /* Memory allocation error */
+		}
+		*n = bufsize; /* Ownership of memory passed to the caller */
+	}
 	/* Read characters until a newline or EOF is encountered */
 	while (1)
 	{
@@ -40,12 +42,8 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 			(*lineptr)[chars_read] = '\0'; /* Null-terminate the line */
 			break;
 		}
-		(*lineptr)[chars_read] = (char)c;
-		chars_read++;
-
-		/* Resize the buffer if needed */
-		re_alloc(chars_read, lineptr, bufsize, n);
+		/* Handle character, update chars_read, and reallocate memory if needed */
 	}
-	return (chars_read);
+	{return chars_read; /* Return the number of characters read */
 }
-
+}
