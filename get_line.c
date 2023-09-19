@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * _getline - will get the new line
  *

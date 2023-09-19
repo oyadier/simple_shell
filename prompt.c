@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * prompt - print interactive mode
  *

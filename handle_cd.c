@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * handle_cd - func changes the direct
  * @arg: the strig cd command

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * _strcmp - compare two string pointers
  * @s1: first string pointer

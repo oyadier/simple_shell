@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * _strdup - nction that returns a pointer to a
  * newly allocated space in memory,

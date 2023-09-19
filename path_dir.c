@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * dir_path - displays the path directory
