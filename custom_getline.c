@@ -11,6 +11,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 {
 	size_t bufsize = 0;
 	size_t chars_read = 0;
+	/*int _spaces;*/
 
 	/*checks if null return*/
 	null_checker(lineptr, n);
@@ -30,7 +31,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
 	{
 		int c = fgetc(stream);
 
-		if (c == EOF || c == '\n')
+		if (c == EOF || c == '\n' || c == ' ')
 		{
 			if (chars_read == 0 && c == EOF)
 			{
