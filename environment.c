@@ -19,3 +19,4 @@ int _environ(void)
 	}
 	return (0);
 }
+

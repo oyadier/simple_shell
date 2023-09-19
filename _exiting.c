@@ -8,3 +8,4 @@ void __exiting(void)
 {
 	exit(EXIT_SUCCESS);
 }
+

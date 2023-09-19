@@ -22,3 +22,4 @@ void free_memory(char *arg[])
 		free(arg);
 	}
 }
+

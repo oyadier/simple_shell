@@ -19,14 +19,11 @@ char **parse_tok(char *line_ptr)
 	{
 		return (NULL);
 	}
-
-	/* Counting the number of strings in the array */
 	while (token)
 	{
 		array_len++;
 		token = strtok(NULL, delim);
 	}
-
 	/* Allocating memory for the array of string (character pointer) */
 	arg = malloc(sizeof(char *) * (array_len + 2));
 
@@ -46,8 +43,8 @@ char **parse_tok(char *line_ptr)
 			token = strtok(NULL, delim);
 		}
 	}
-
-	arg[i] = NULL;	
+	arg[i] = NULL;
 	free(cpy_line);
 	return (arg);
 }
+

@@ -9,7 +9,6 @@ int main(void)
 {
 	char *line_ptr;
 	char **arg;
-	/*int status = 0;*/
 
 	while (1)
 	{
@@ -48,3 +47,4 @@ int main(void)
 	}
 	return (0);
 }
+
