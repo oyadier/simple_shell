@@ -14,7 +14,7 @@ char *_getline()
 	int i = 0;
 
 
-	read_line = custom_getline(&line_ptr, &line_no, stdin);
+	read_line = getline(&line_ptr, &line_no, stdin);
 
 	if (read_line == -1)
 	{
