@@ -5,8 +5,7 @@
  * @path_dir: the directory of the path
  * @usr_command: Command entered by the user
  *
- * Return: NULL if the file is not found;
- * 		otherwise, the full path of the file
+ * Return: NULL if the file is not found otherwise, the full path of the file
  */
 char *dir_path(char *path_dir, char *usr_command)
 {
