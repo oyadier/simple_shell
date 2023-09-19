@@ -3,6 +3,7 @@
 
 /**
  * __exiting - Exit the shell with a success status
+ *
  */
 void __exiting(void)
 {

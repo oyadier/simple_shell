@@ -3,6 +3,7 @@
  * _strcmp - compare two string pointers
  * @s1: first string pointer
  * @s2: second string pointer
+ *
  * Return: 0 success
  */
 int _strcmp(char *s1, char *s2)

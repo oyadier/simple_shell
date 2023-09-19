@@ -12,6 +12,7 @@
 
 #define  BUF_SIZE 128
 
+/*The needed methods for the project*/
 void _exits();
 char *_getline();
 int _putchar(char c);
@@ -23,9 +24,6 @@ char *valid_command(char *cmd);
 char *dir_path(char *dir,char *cmd);
 void _execve(char *argv[]);
 int _environ();
-/*int null_checker(char **ptr, size_t *n);*/
-/*int  re_alloc(size_t chars_read,char **ptr,size_t bufsize, size_t *n);*/
-/*ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);*/
 char *_strcat(char *dest, char *src);
 void __exiting();
 void handle_cd(char *arg[]);
@@ -33,5 +31,6 @@ int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 extern char **environ;
 void free_memory(char *arg[]);
+
 #endif
 
