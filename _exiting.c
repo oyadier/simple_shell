@@ -2,7 +2,9 @@
 
 /**
  * __exiting - Exit the shell with a success status
+ * @status: the exit status
  *
+ * Return: void
  */
 void __exiting(int status)
 {
