@@ -13,7 +13,6 @@
 #define  BUF_SIZE 128
 
 /*The needed methods for the project*/
-void _exits(void);
 char *_getline(void);
 int _putchar(char c);
 void prompt(void);
@@ -25,7 +24,7 @@ char *dir_path(char *dir, char *cmd);
 void _execve(char *argv[]);
 int _environ(void);
 char *_strcat(char *dest, char *src);
-void __exiting(void);
+void __exiting(int status);
 void handle_cd(char *arg[]);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);

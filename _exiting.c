@@ -4,8 +4,8 @@
  * __exiting - Exit the shell with a success status
  *
  */
-void __exiting(void)
+void __exiting(int status)
 {
-	exit(EXIT_SUCCESS);
+	exit(status);
 }
 

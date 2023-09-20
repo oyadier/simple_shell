@@ -36,7 +36,7 @@ int main(void)
 		{
 			free_memory(arg);
 			free(line_ptr);
-			__exiting();
+			__exiting(2);
 		}
 		else
 		{
